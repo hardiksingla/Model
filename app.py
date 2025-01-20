@@ -49,5 +49,5 @@ def predict() :
 
 
 if __name__ == '__main__':
-    # Explicitly set port to 8080
-    app.run(host='0.0.0.0', port=8080)
+    port = os.getenv('PORT', 8080)  # Use the port specified by the platform (e.g., Render)
+    app.run(host='0.0.0.0', port=int(port))
