@@ -7,6 +7,7 @@ click
 colorama
 cycler
 Flask
+flask_cors
 flatbuffers
 fonttools
 gast
