@@ -2,13 +2,16 @@ import base64
 from flask import Flask
 
 import os
-from flask import request, jsonify
+from flask import Flask, request, jsonify
 import tensorflow as tf 
 import tensorflow_hub as hub 
 import cv2 
 import numpy as np
 
 from flask_cors import CORS 
+
+# Disable GPU to avoid Render deployment warnings
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 app = Flask(__name__)
 CORS(app) 
@@ -62,4 +65,6 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=8080)
+    # Use dynamic port binding for deployment on Render
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
