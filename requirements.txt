@@ -1,7 +1,6 @@
 Flask
-flask-cors
-tensorflow-cpu
-tensorflow-hub
-opencv-python-headless
+flask_cors
+tensorflow
+tensorflow_hub
+opencv-python
 numpy
-gunicorn
