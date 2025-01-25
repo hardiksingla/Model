@@ -1,5 +1,4 @@
 import base64
-import matplotlib.pyplot as plt
 from flask import Flask
 
 import os
