@@ -12,14 +12,6 @@ from flask_cors import CORS
 
 # Disable GPU to avoid Render deployment warnings
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
-port = int(os.environ.get("PORT", 8080))
-
-# Limit TensorFlow memory growth to avoid OOM
-physical_devices = tf.config.list_physical_devices('CPU')
-tf.config.set_logical_device_configuration(
-    physical_devices[0],
-    [tf.config.LogicalDeviceConfiguration(memory_limit=400)]
-)
 
 app = Flask(__name__)
 CORS(app) 
@@ -72,4 +64,5 @@ def predict():
     })
 
 if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 8080))
     app.run(host='0.0.0.0', port=port)
