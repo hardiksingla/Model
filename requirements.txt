@@ -1,6 +1,6 @@
 Flask
 flask_cors
-tensorflow
+tensorflow-cpu
 tensorflow_hub
 opencv-python
 numpy
