@@ -12,6 +12,8 @@ from flask_cors import CORS
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
+print("CUDA_VISIBLE_DEVICES =", os.environ.get("CUDA_VISIBLE_DEVICES"))
+print("Available devices:", tf.config.list_physical_devices())
 
 app = Flask(__name__)
 CORS(app) 
